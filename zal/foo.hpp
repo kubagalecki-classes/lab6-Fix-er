@@ -12,7 +12,7 @@ std::vector< char > foo(std::list< Human >& people)
  std::for_each(people.rbegin(), people.rend(),[&](std::list<Human>::iterator it =people.rbegin() ) {
      it->birthday();    });
  //std::transform(people.rbegin(), people.rend(), //ret.rbegin(),[&](auto it) {
-   ret.push_back(it.isMonster() ? 'n' : 'y');});
+  // ret.push_back(it.isMonster() ? 'n' : 'y');});
     return ret;
 }
 
