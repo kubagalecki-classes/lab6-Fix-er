@@ -11,7 +11,7 @@ std::vector< char > foo(std::list< Human >& people)
  ret.reserve(people.size());
  std::for_each(people.rbegin(), people.rend(),[&](auto& it ) {
      it.birthday();    });
- std::transform(people.rbegin(), people.rend(), ret.rbegin(),[&](auto& it) {
+ std::transform(people.rbegin(), people.rend(), ret.rrend(),[&](auto& it) {
    ret.push_back(it.isMonster() ? 'n' : 'y');});
     return ret;
 }
