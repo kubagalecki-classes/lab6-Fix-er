@@ -9,10 +9,10 @@ std::vector< char > foo(std::list< Human >& people)
 {
  std::vector< char > ret;
  ret.reserve(people.size());
- std::for_each(people.rbegin(), people.rend(),[&](auto it = *people.rbegin()) {
+ std::for_each(people.rbegin(), people.rend(),[&]const (auto it) {
        it->birthday();    });
- //std::transform(people.begin(), people.end(), ret.begin(),[&](auto it = people.rbegin()) {
-   // ret.push_back(it.isMonster() ? 'n' : 'y');});
+ std::transform(people.rbegin(), people.rend(), ret.rbegin(),[&](const auto it) {
+   ret.push_back(it.isMonster() ? 'n' : 'y');});
     return ret;
 }
 
