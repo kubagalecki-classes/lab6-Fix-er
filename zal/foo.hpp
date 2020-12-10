@@ -8,11 +8,11 @@
 std::vector< char > foo(std::list< Human >& people)
 {
  std::vector< char > ret;
-  ret.reserve(people.size());
+ ret.reserve(people.size());
+  for_each(people.begin(), people.end(),[](auto it) {
+        it.birthday();})
   transform(people.begin(), people.end(), ret.begin(),[&](auto it) {
-        it.birthday();
         ret.push_back(it.isMonster() ? 'n' : 'y');
-        return ret;
     });
     return ret;
 }
