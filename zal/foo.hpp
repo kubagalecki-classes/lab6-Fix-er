@@ -12,9 +12,8 @@ std::vector< char > foo(std::list< Human >& people)
  std::for_each(people.begin(), people.end(),[](auto it) {
         it.birthday();
     });
-  std::transform(people.begin(), people.end(), ret.begin(),[&](auto it) {
-        ret.push_back(it.isMonster() ? 'n' : 'y');
-    });
+ // std::transform(people.begin(), people.end(), ret.begin(),[&](auto it) {
+   //     ret.push_back(it.isMonster() ? 'n' : 'y');});
     return ret;
 }
 
